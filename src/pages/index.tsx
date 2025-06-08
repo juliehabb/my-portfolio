@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom";
 import { projects } from "../data/projects";
 
-
 export default function HomePage() {
   return (
     <div className="w-full bg-gradient-to-tr from-white via-pink-100 to-yellow-100 text-gray-900 font-sans">
-      
       {/* Navbar */}
       <nav className="max-w-screen-xl mx-auto px-6 py-6 flex justify-between items-center border-b text-sm font-medium">
         <div className="space-x-8">
@@ -89,12 +87,8 @@ export default function HomePage() {
           📞 +47 48214063 &nbsp;&nbsp; ✉️ julie.habbestad@hotmail.com &nbsp;&nbsp;
           <a href="#" className="hover:underline">LinkedIn</a>
         </div>
-        <div className="space-x-4">
-          
-        </div>
       </footer>
     </div>
   );
 }
-
 
