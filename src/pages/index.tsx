@@ -68,7 +68,7 @@ export default function HomePage() {
               </div>
               <div className="mt-2">
                 <h4 className="font-semibold">{project.title}</h4>
-                <p className="text-sm text-gray-600">{project.description}</p>
+                <p className="text-sm text-gray-600">{project.description.length > 100 ? project.description.slice(0, 100) + "...": project.description}</p>
                 <Link
                   to={`/projects/${project.id}`}
                   className="inline-block mt-2 text-sm font-medium text-blue-600 hover:underline"
