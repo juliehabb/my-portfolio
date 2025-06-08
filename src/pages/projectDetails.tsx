@@ -1,10 +1,19 @@
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { projects } from "../data/projects";
+import { useState } from "react";
 
 export default function ProjectDetails() {
   const { id } = useParams();
   const project = projects.find(p => p.id === id);
+  const [copied, setCopied] = useState(false); 
+
+  const copyLink = () => {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
 
   if (!project) {
     return <div className="p-6">Project not found.</div>;
@@ -27,6 +36,17 @@ export default function ProjectDetails() {
         <p className="text-lg text-gray-700 max-w-2xl mx-auto">
           {project.description}
         </p>
+        {/* Copy Link Button */}
+        <button
+         onClick={copyLink}
+          className={`mt-4 px-4 py-2 text-sm rounded transition font-medium ${
+           copied
+            ? "bg-green-500 text-white"
+          : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+          }`}
+           >
+          {copied ? "Link Copied!" : "Copy Link"}
+          </button>
       </header>
 
       <section className="max-w-screen-xl mx-auto px-6 mb-24">
@@ -49,27 +69,26 @@ export default function ProjectDetails() {
         </div>
 
         <div className="mt-6 flex flex-wrap gap-4">
-         <a
-         href={project.link}
-          target="_blank"
-         rel="noopener noreferrer"
-         className="px-6 py-3 bg-blue-600 text-white font-medium rounded hover:bg-blue-700 transition"
-         >
-         View Live Project
-         </a>
-
-         {project.readme && (
           <a
-          href={project.readme}
-          target="_blank"
-          rel="noopener noreferrer"
-           className="px-6 py-3 bg-gray-700 text-white font-medium rounded hover:bg-gray-800 transition"
-           >
-           Read README
-           </a>
-          )}
-          </div>
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 bg-blue-600 text-white font-medium rounded hover:bg-blue-700 transition"
+          >
+            View Live Project
+          </a>
 
+          {project.readme && (
+            <a
+              href={project.readme}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 bg-gray-700 text-white font-medium rounded hover:bg-gray-800 transition"
+            >
+              Read README
+            </a>
+          )}
+        </div>
       </section>
 
       <footer className="max-w-screen-xl mx-auto px-6 text-sm text-center pb-12 space-y-2">
