@@ -48,16 +48,28 @@ export default function ProjectDetails() {
           />
         </div>
 
-        <div>
+        <div className="mt-6 flex flex-wrap gap-4">
+         <a
+         href={project.link}
+          target="_blank"
+         rel="noopener noreferrer"
+         className="px-6 py-3 bg-blue-600 text-white font-medium rounded hover:bg-blue-700 transition"
+         >
+         View Live Project
+         </a>
+
+         {project.readme && (
           <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block mt-6 px-6 py-3 bg-blue-600 text-white font-medium rounded hover:bg-blue-700 transition"
-          >
-            View Live Project
-          </a>
-        </div>
+          href={project.readme}
+          target="_blank"
+          rel="noopener noreferrer"
+           className="px-6 py-3 bg-gray-700 text-white font-medium rounded hover:bg-gray-800 transition"
+           >
+           Read README
+           </a>
+          )}
+          </div>
+
       </section>
 
       <footer className="max-w-screen-xl mx-auto px-6 text-sm text-center pb-12 space-y-2">

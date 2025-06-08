@@ -6,21 +6,24 @@ export const projects = [
     technologies: ["React", "Tailwind CSS", "TypeScript", "REST API"],
     image: "/my-portfolio/images/javascript-framework.png", 
     link: "https://generalstoreblob.netlify.app/",
+    readme: "https://github.com/juliehabb/ecommerce-app/blob/master/README.md"
   },
   {
     id: "semester-project",
     title: "Semester project",
-    description: "My personal portfolio showcasing projects and skills.",
-    technologies: ["React", "Tailwind CSS"],
+    description: "A auction site where one can bid and sell own products.",
+    technologies: ["React", "Bootstrap"],
     image: "/my-portfolio/images/Semester-project-2.png",
     link: "https://juliehabb.github.io/auction-website/?classId=bbc516b1-3b66-40d2-beb1-b696fd0c5230&assignmentId=c181e851-cc93-4473-8eaf-98528a341b16&submissionId=05ee203e-db6c-6ec7-605c-50cd8ab4dbc3",
+    readme: "https://github.com/juliehabb/auction-website/blob/main/README.md"
   },
   {
     id: "exam-project-2",
     title: "exam project 2",
-    description: "My personal portfolio showcasing projects and skills.",
-    technologies: ["React", "Tailwind CSS", "Vite"],
+    description: "Final exam. A accomodation booking site named Holidaze. One can book accomodations and list own accomodations for others too book. ",
+    technologies: ["React", "Tailwind CSS"],
     image: "/my-portfolio/images/exam-project-2.png",
     link: "juliehabb.github.io/final-exam/",
+    readme: "https://github.com/juliehabb/final-exam/blob/master/README.md"
   }
 ];
